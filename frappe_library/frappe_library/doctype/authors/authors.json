@@ -1,0 +1,36 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-11 15:30:45.375154",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "given",
+  "last"
+ ],
+ "fields": [
+  {
+   "fieldname": "given",
+   "fieldtype": "Data",
+   "label": "Given Name"
+  },
+  {
+   "fieldname": "last",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-11 15:30:45.375154",
+ "modified_by": "Administrator",
+ "module": "Frappe Library",
+ "name": "Authors",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

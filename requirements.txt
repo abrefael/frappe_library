@@ -1,1 +1,11 @@
 # frappe -- https://github.com/frappe/frappe is installed via 'bench init'
+google>=3.0.0
+requests>=2.25.1
+pypdf2==2.1.0
+pdftitle>=0.3
+feedparser>=6.0.2
+pyperclip
+pdfminer.six==20221105
+pymupdf==1.21.0
+isbnlib
+pdf2doi4frappe_library
