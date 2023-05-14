@@ -9,6 +9,7 @@ class BooksandArticles(Document):
 	def guess_pdf_data(pdf_file_path = None, doi = None, isbn = None):
 		import pdf2doi
 		import isbnlib
+		import os
 		def guess (results, type = None):
 			import json
 			if type == 'doi' or type == 'DOI':
@@ -94,4 +95,4 @@ class BooksandArticles(Document):
 				return "null"
 		else:
 			sending_data = guess (results, type)
-			return sending_data
+			return os.getcwd()#sending_data
