@@ -5,9 +5,8 @@ import frappe
 from frappe.model.document import Document
 
 class BooksandArticles(Document):
-	pass
+	@frappe.whitelist()
+	def guess_pdf_data(pdf_file_path = None, doi = None, isbn = None):
+		import requests
+		return 'Something'
 
-@frappe.whitelist()
-def guess_pdf_data(pdf_file_path = None, doi = None, isbn = None):
-	import requests
-	return 'Something'
