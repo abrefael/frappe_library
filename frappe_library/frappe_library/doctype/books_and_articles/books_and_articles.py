@@ -79,9 +79,9 @@ class BooksandArticles(Document):
 		Please make sure file was OCRed.
 		'''
 		if isbn:
-			results, type = pdf2doi.validate(identifier,'isbn'), 'ISBN'
+			results, type = pdf2doi.validate(isbn,'isbn'), 'ISBN'
 		elif doi:
-			results, type = pdf2doi.validate(identifier,'doi'), 'DOI'
+			results, type = pdf2doi.validate(doi,'doi'), 'DOI'
 		else:
 			try:
 				data = pdf2doi.pdf2doi(pdf_file_path)
