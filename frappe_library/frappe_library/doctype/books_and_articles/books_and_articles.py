@@ -94,4 +94,4 @@ class BooksandArticles(Document):
 				return "null"
 		else:
 			sending_data = guess (results, type)
-			return "sending_data"
+			return sending_data
