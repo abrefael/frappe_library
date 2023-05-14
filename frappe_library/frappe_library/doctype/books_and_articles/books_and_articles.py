@@ -6,7 +6,7 @@ from frappe.model.document import Document
 
 class BooksandArticles(Document):
 	@frappe.whitelist()
-	def guess_pdf_data(filepath, doi,isbn):# = None, isbn = None):
+	def guess_pdf_data(self, filepath, doi, isbn):# = None, isbn = None):
 		import pdf2doi
 		import isbnlib
 		import os
