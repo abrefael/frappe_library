@@ -6,9 +6,11 @@ from frappe.model.document import Document
 
 class BooksandArticles(Document):
 	@frappe.whitelist()
-	def guess_pdf_data(self, filepath, doi = None, isbn = None):
+	def guess_pdf_data(self, filepath = None, doi = None, isbn = None):
 		import pdf2doi
 		import isbnlib
+		import fnmatch
+		import subprocess
 		import os
 		return os.getcwd()
 		# def guess (results, type = None):
@@ -86,6 +88,12 @@ class BooksandArticles(Document):
 			# results, type = pdf2doi.validate(doi,'doi'), 'DOI'
 		# else:
 			# try:
+				# d=subprocess.run(["find", ".", "-print"], capture_output=True)
+				# u = d.stdout.decode()
+				# g = u.split('\n')
+				# pattern = '*' + filepath
+				# pdf_file_path = fnmatch.filter(g, Pattern)
+				# pdf_file_path = '.' + pdf_file_path
 				# data = pdf2doi.pdf2doi(pdf_file_path)
 				# results, type = data['validation_info'], data['identifier_type']
 			# except:
