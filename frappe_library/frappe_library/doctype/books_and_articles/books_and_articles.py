@@ -86,19 +86,18 @@ class BooksandArticles(Document):
 		elif doi:
 			results, type = pdf2doi.validate(doi,'doi'), 'DOI'
 		else:
-			# try:
-			s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
-			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)[0]
-			pdf_file_path = os.getcwd() + filepath[1:]
-			return pdf_file_path
-				# data = pdf2doi.pdf2doi(pdf_file_path)
-				# results, type = data['validation_info'], data['identifier_type']
-			# except:
-				# frappe.msgprint(msg=msg, title='Error')
-				# return "Failed"
+			try:
+				s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
+				filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)[0]
+				pdf_file_path = os.getcwd() + filepath[1:]
+				data = pdf2doi.pdf2doi(pdf_file_path)
+				results, type = data['validation_info'], data['identifier_type']
+			except:
+				frappe.msgprint(msg=msg, title='Error')
+				return "null"
 		if not results:
 				frappe.msgprint(msg=msg, title='Error')
-				return "Failed 2"
+				return "null"
 		else:
 			sending_data = guess (results, type)
 			return sending_data
