@@ -92,9 +92,9 @@ class BooksandArticles(Document):
 			return pdf_file_path
 				# data = pdf2doi.pdf2doi(pdf_file_path)
 				# results, type = data['validation_info'], data['identifier_type']
-			except:
-				frappe.msgprint(msg=msg, title='Error')
-				return "Failed"
+			# except:
+				# frappe.msgprint(msg=msg, title='Error')
+				# return "Failed"
 		if not results:
 				frappe.msgprint(msg=msg, title='Error')
 				return "Failed 2"
