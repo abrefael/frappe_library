@@ -89,14 +89,15 @@ class BooksandArticles(Document):
 				s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
 				filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filename)
 				pdf_file_path = filepath[0][1:]
-				data = pdf2doi.pdf2doi(pdf_file_path)
-				results, type = data['validation_info'], data['identifier_type']
+				return "Success!"
+				# data = pdf2doi.pdf2doi(pdf_file_path)
+				# results, type = data['validation_info'], data['identifier_type']
 			except:
 				frappe.msgprint(msg=msg, title='Error')
-				return "null"
+				return "Failed"
 		if not results:
 				frappe.msgprint(msg=msg, title='Error')
-				return "null"
+				return "Failed 2"
 		else:
 			sending_data = guess (results, type)
 			return os.getcwd()#sending_data
