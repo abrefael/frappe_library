@@ -11,6 +11,7 @@ class BooksandArticles(Document):
 		import isbnlib
 		import fnmatch
 		import subprocess
+		import os
 		def guess (results, type = None):
 			import json
 			if type == 'doi' or type == 'DOI':
@@ -88,7 +89,7 @@ class BooksandArticles(Document):
 			# try:
 			s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
 			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)[0]
-			pdf_file_path = filepath[1:]
+			pdf_file_path = os.getcwd() + filepath[1:]
 			return pdf_file_path
 				# data = pdf2doi.pdf2doi(pdf_file_path)
 				# results, type = data['validation_info'], data['identifier_type']
