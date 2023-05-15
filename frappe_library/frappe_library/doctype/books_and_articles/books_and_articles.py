@@ -87,9 +87,9 @@ class BooksandArticles(Document):
 		else:
 			# try:
 			s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
-			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)
-			# pdf_file_path = filepath[0][1:]
-			return s
+			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)[0]
+			pdf_file_path = filepath[1:]
+			return pdf_file_path
 				# data = pdf2doi.pdf2doi(pdf_file_path)
 				# results, type = data['validation_info'], data['identifier_type']
 			# except:
