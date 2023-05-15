@@ -87,7 +87,7 @@ class BooksandArticles(Document):
 		else:
 			# try:
 			s = subprocess.run(['find','.'],stdout=subprocess.PIPE)
-			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filename)
+			filepath = fnmatch.filter(s.stdout.decode().split('\n'),'*' + filepath)
 			pdf_file_path = filepath[0][1:]
 			return pdf_file_path
 				# data = pdf2doi.pdf2doi(pdf_file_path)
