@@ -8,14 +8,23 @@ The Idea is that by having a DOI\ISBN or a PDF file of a specific article\text b
 Requires Frappe Framework 14 installed.
 In addition the installation also adds to your system:
 google>=3.0.0
+
 requests>=2.25.1
+
 pypdf2==2.1.0
+
 pdftitle>=0.3
+
 feedparser>=6.0.2
+
 pyperclip
+
 pdfminer.six==20221105
+
 pymupdf==1.21.0
+
 isbnlib
+
 pdf2doi4frappe_library (based on https://pypi.org/project/pdf2doi/ specialy trimmed to tailor the Frappe Library application)
 
 #### License
