@@ -22,6 +22,11 @@ isbnlib
 pdf2doi4frappe_library #(based on https://pypi.org/project/pdf2doi/ specialy trimmed to tailor the Frappe Library application)
 ```
 
+#### Installation
+```
+bench get-app https://github.com/abrefael/frappe_library.git --resolve-deps
+bench --site [Your site] install-app frappe_library
+```
 #### License
 
 MIT
